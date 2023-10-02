@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index7</title>
+</head>
+<body>
+    <div>
+        @{
+            HttpCookie cookies = Request.Cookies["ProductCookies"];
+            string Name = cookies["Name"];
+            int Id = int.Parse(cookies["Id"]);
+            double Price = double.Parse(cookies["Price"]);
+        }
+        <table border="1" align="center" width="20%">
+            <caption>Product Details</caption>
+            <tr><td>Id:</td><td>@Id</td></tr>
+            <tr><td>Name:</td><td>@Name</td></tr>
+            <tr>
+                <td>Price:</td>
+                <td>
+                    @{
+                        Price = Price + Price * 10 / 100;
+                        @Price
+                    }
+                </td>
+            </tr>
+        </table>
+        <center>Click to launch new <a href="/Test/Index2">Page</a>.</center>
+    </div>
+</body>
+</html>

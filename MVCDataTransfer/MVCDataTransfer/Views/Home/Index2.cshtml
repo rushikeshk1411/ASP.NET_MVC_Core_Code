@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index2</title>
+</head>
+<body>
+    <div> 
+        <table>
+            <tr>
+                <td>Product Id: </td>
+                <td>@ViewBag.Id</td>
+            </tr>
+            <tr>
+                <td>Product Name: </td>
+                <td>@ViewBag.name</td>
+            </tr>
+            <tr>
+                @{double price = ViewBag.price;}
+                @{price = price + price * 0.1;}
+                <td>Product Price: </td>
+                <td>@price</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

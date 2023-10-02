@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style>
+        td{
+            border:2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <td>Product Id: </td>
+                <td>@ViewData["id"]</td>
+            </tr>
+            <tr>
+                <td>Product Name: </td>
+                <td>@ViewData["name"]</td>
+            </tr>
+            <tr>
+                @{double price = Convert.ToDouble(ViewData["Price"]);}
+                @{price = price + price * 0.1;} 
+                <td>Product Price: </td>
+                <td>@price</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
